@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
-        <meta name="author" content="Przemek:)" />
+        <meta name="author" content="PrzemekKuba:)" />
         <title>AfroLoki Białystok</title>
         <!-- Favicon-->
         <!-- Bootstrap Icons-->
@@ -20,9 +20,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
-        
+            
             section {
-                padding: 60px 0;
+               
                 min-height: 100vh;
             }
     span, a, a:hover {
@@ -153,7 +153,7 @@
         </style>
 
     </head>
-    <body id="strona_glowna">
+    <body id="strona_glowna"  >
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -190,8 +190,8 @@
         <div class="container" id="onas">
             <!-- O mnie -->
             <div class="row" style="height:1000px;">
-                <div class="col-6"><h1>Zdjęcie pani</h1></div>
-                <div class="col-6"><h1>O pani tekst</h1></div>
+                <div class="col-6"><h1></h1></div>
+                <div class="col-6"><h1></h1></div>
             </div>
         </div>
 
@@ -210,25 +210,24 @@
         <!-- O firmie -->
         <div class="container" >
             <div class="row" style="height:1000px;">
-                <div class="col-6"><h1>O firmie tekst</h1></div>
-                <div class="col-6"><h1>O firmie zdjęcie</h1></div>
+                <div class="col-6"><h1></h1></div>
+                <div class="col-6"><h1></h1></div>
             </div>
         </div>
      
 
 
 
-        <div class="parallax2" style="height:20vh;"></div>
+        <div class="parallax2 mb-5" style="height:20vh;"></div>
 
 
 
 
          <!-- Kontakt -->
-        <div class="container text-center" id="kontakt" style="height:500px;">
-            <hr class="divider" />
-            <h1> Tu będą informacje kontaktowe</h1>
-          
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.6652347706577!2d23.13579269905707!3d53.113216375079475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffbe53f0917ad%3A0x92c50ec1a06004c9!2sAfro.%20Wierzy%C5%84ska%20E.!5e0!3m2!1sen!2spl!4v1652616557063!5m2!1sen!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="container mt-5" id="kontakt" style="height:500px;">
+            <div class="container text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2820.6652347706577!2d23.13579269905707!3d53.113216375079475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffbe53f0917ad%3A0x92c50ec1a06004c9!2sAfro.%20Wierzy%C5%84ska%20E.!5e0!3m2!1sen!2spl!4v1652616557063!5m2!1sen!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
 
 
@@ -236,13 +235,17 @@
 
          <!-- Galeria -->
          <div class="w-100 text-center" id="galeria">
-            <hr class="divider" />
+            
             <h1> Nasze ostatnie realizacje </h1>
 
 
 
-            <hr class="divider" />
-            <div class="row">
+            <hr class="divider">
+
+
+
+
+            <div class="row me-0">
             {% for key in slownik %}
           
 
@@ -250,7 +253,7 @@
                 {% if loop.index <= 3 %}
                 <div id="{{loop.index}}" style="visibility:visible;display:block;">
                       <!--<h4>{{slownik[key][1]}}</h4> --> 
-                        <div class="col-12" >
+                        <div class="col-12">
                             <div class="row justify-content-md-center px-5">              
                                 {% for id in slownik[key][0]%} 
                                 {% if slownik[key][0]|length <= 3 %}
