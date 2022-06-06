@@ -38,7 +38,52 @@
 
 
 
+<hr class="my-5">
 
+<div class="container">
+  <div class="row my-5">
+    <div class="col-12 text-center">
+      <p class="display-2">Edytuj cennik</p>
+    </div>
+      <div class="col-12 text-center">
+          <div class="row">
+            <form method="POST" action="zaktualizuj_ceny">
+              {% for usluga in lista %}
+              <div class="col-12 my-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card-title">
+                      Usługa nr. <b>{{usluga[0]}}</b>
+                    </div>
+                    <div class="card-text">
+                      <div class="row text-center">
+                        <div class="col-5 "></div>
+                        <div class="col-2">
+                      
+                          <div class="input-group">
+                              <input class="form-control" type="number" name="cena_{{usluga[0]}}" value="{{usluga[1]}}">
+                            <span class="input-group-text"> zł </span>
+                          </div>
+
+                            
+                        </div>
+                        <div class="col-5"></div>
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+              {% endfor %}
+              <div class="d-grid gap-2">
+                <input type="submit" class="btn btn-primary" value="Zaktualizuj"/>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+</div>
 
 
 

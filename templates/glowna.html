@@ -178,6 +178,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#onas">O nas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cennik">Cennik</a></li>
                         <li class="nav-item"><a class="nav-link" href="#kontakt">Kontakt</a></li>
                         <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
                     </ul>
@@ -247,11 +248,21 @@
 
 
 
-        <div class="parallax mb-5" style="height:10vh;"></div>
+        <div class="parallax" style="height:10vh;"></div>
 
 
+        <!-- Cennik -->
+        <div class="container" id="cennik" style="height:700px;">
+            
+            {% for usluga in lista %}
+                Usługa nr: {{usluga[0]}}<br>
+                Cena: {{usluga[1]}}zł<br>
+            {% endfor %}
+
+        </div>
 
 
+        <div class="parallax2 mb-5" style="height:10vh;"></div>
          <!-- Kontakt -->
         <div class="container  mt-5" id="kontakt" style="height:90vh;">
 
