@@ -252,13 +252,104 @@
 
 
         <!-- Cennik -->
-        <div class="container" id="cennik" style="height:700px;">
-            
+        <div class="container" id="cennik" style="">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Poznaj nasze usługi</h1>
+
+                </div>
+                <div class="col-12">
             {% for usluga in lista %}
                 Usługa nr: {{usluga[0]}}<br>
                 Cena: {{usluga[1]}}zł<br>
+                <section class="table-pricing py-5">
+                    <div class="container">
+                      <div class="row">
+                        <!-- basic package -->
+                        <div class="col-lg-4">
+                          <div class="card mb-5 mb-lg-0">
+                            <div class="card-body">
+                              <h5 class="card-title text-uppercase text-center text-primary font-weight-bold">Basic Package</h5>
+                              <h5 class="card-text text-muted text-uppercase text-center">For Small Businesses</h5>
+                              <h6 class="card-price text-center">$599<span class="period">/one-time</span></h6>
+                              <hr>
+                              <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>5 Website Pages</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Mobile Responsive</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Google Maps</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Mailing List Plugin</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Contact Form</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Social Media Integration</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Simple Quotation Form</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Photo Sourcing</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>3 Round Revisions</li>
+                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times-circle"></i></span>Custom 404 Page</li>
+                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times-circle"></i></span>Wireframing</li>
+                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times-circle"></i></span>Speed Optimization</li>
+                              </ul>
+                              <a href="#" class="btn btn-block btn-primary text-uppercase mt-4 mb-3">Get Started</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- standard package-->
+                        <div class="col-lg-4">
+                          <div class="card mb-5 mb-lg-0">
+                            <div class="card-body">
+                              <h5 class="card-title text-uppercase text-center text-primary font-weight-bold">Standard Package</h5>
+                              <h5 class="card-text text-muted text-uppercase text-center">For Medium Businesses</h5>
+                              <h6 class="card-price text-center">$699<span class="period">/one-time</span></h6>
+                              <hr>
+                              <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>5 Website Pages</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Mobile Responsive</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Google Maps</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Mailing List Plugin</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Contact Form</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Social Media Integration</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Simple Quotation Form</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Photo Sourcing</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>3 Round Revisions</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Custom 404 Page</li>
+                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times-circle"></i></span>Wireframing</li>
+                                <li class="text-muted"><span class="fa-li"><i class="fas fa-times-circle"></i></span>Speed Optimization</li>
+                              </ul>
+                              <a href="#" class="btn btn-block btn-primary text-uppercase mt-4 mb-3">Get Started</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- premium -->
+                        <div class="col-lg-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title text-uppercase text-center text-primary font-weight-bold">Premium Package</h5>
+                              <h5 class="card-text text-muted text-uppercase text-center">For Enterprise Businesses</h5>
+                              <h6 class="card-price text-center">$1199<span class="period">/one-time</span></h6>
+                              <hr>
+                              <ul class="fa-ul">
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>5 Website Pages</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Mobile Responsive</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Google Maps</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Mailing List Plugin</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Contact Form</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Social Media Integration</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Simple Quotation Form</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Photo Sourcing</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>3 Round Revisions</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Custom 404 Page</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Wireframing</li>
+                                <li><span class="fa-li"><i class="fas fa-check-circle text-primary"></i></span>Speed Optimization</li>
+                              </ul>
+                              <a href="#" class="btn btn-block btn-primary text-uppercase mt-4 mb-3">Get Started</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                  
             {% endfor %}
-
+                </div>
+            </div>
         </div>
 
 
