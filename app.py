@@ -70,13 +70,23 @@ class posty(db.Model):
    def __init__(self, zdjecia, opis):
       self.zdjecia = zdjecia
       self.opis = opis
+
 class ceny(db.Model):
    cena_id = db.Column('cena_id', db.Integer, primary_key = True)
    cena = db.Column(db.Integer())
+   tytul = db.Column(db.String(100))
+   opis = db.Column(db.String(500))
+   czy_cena_zmienna = db.Column(db.String(100))
 
 
-   def __init__(self,cena):
+
+   def __init__(self,cena,tytul,opis,czy_cena_zmienna):
       self.cena = cena
+      self.tytul = tytul
+      self.opis = opis
+      self.czy_cena_zmienna = czy_cena_zmienna
+
+   
 
 db.create_all()
 
@@ -135,21 +145,20 @@ def panel():
          slownik[rekord.post_id]=[tablica,rekord.opis]
          
 
+
+
+
+
+
+
       rekordy=ceny.query.order_by(ceny.cena_id.desc()).all()
       lista=[]
     
       for rekord in rekordy:
-         lista.append([rekord.cena_id,rekord.cena])
+         lista.append([rekord.cena_id,rekord.cena,rekord.tytul,rekord.opis,rekord.czy_cena_zmienna])
 
-        
          
-  
-
-
-
-
-
-
+ 
       return render_template("/panel.html",
       slownik=slownik,
       lista=lista,
@@ -159,27 +168,67 @@ def panel():
       return redirect("/panel_logowanie")
 
 
+@app.route('/dodaj_usluge',methods=["POST"])
+def dodaj_usluge():
+   if uzytkownik_zalogowany():
+      cena=request.form['cena']
+      tytul=request.form['tytul']
+      opis=request.form['opis']
+      czy_cena_zmienna=request.form.getlist('czy_cena_zmienna')
+      if czy_cena_zmienna==[]:
+         czy_cena_zmienna="NIE"
+      else:
+         czy_cena_zmienna=czy_cena_zmienna[0]
+      
+
+      rekord=ceny(str(cena),str(tytul),str(opis),str(czy_cena_zmienna))
+      db.session.add(rekord)
+      db.session.commit()
+      return redirect("/panel")
 
 
 @app.route('/zaktualizuj_ceny',methods=["POST"])
 def zaktualizuj_ceny():
    if uzytkownik_zalogowany():
-      cena_1=request.form.get("cena_1")
-      cena_2=request.form.get("cena_2")
-      cena_3=request.form.get("cena_3")
 
       rekordy=ceny.query.order_by(ceny.cena_id.desc()).all()
       print(rekordy)
-      for rekord in rekordy:
-         if rekord.cena_id==3:
-            rekord.cena=int(cena_3)
-            db.session.commit()
-         if rekord.cena_id==2:
-            rekord.cena=int(cena_2)
-            db.session.commit()
-         if rekord.cena_id==1:
-            rekord.cena=int(cena_1)
-            db.session.commit()
+      for n in range(1,len(rekordy)+1):
+         print(n)
+         cena=request.form['cena'+str(n)]
+         tytul=request.form['tytul'+str(n)]
+         opis=request.form['opis'+str(n)]
+         czy_cena_zmienna=request.form.getlist('czy_cena_zmienna'+str(n))
+         if czy_cena_zmienna==[]:
+            czy_cena_zmienna="NIE"
+         else:
+            czy_cena_zmienna=czy_cena_zmienna[0]
+         for rekord in rekordy:
+            if rekord.cena_id==n:
+               rekord.cena=cena
+               rekord.tytul=tytul
+               rekord.opis=opis
+               rekord.czy_cena_zmienna=czy_cena_zmienna
+               
+               db.session.commit()
+
+
+
+      # cena_1=request.form.get("cena_1")
+      # cena_2=request.form.get("cena_2")
+      # cena_3=request.form.get("cena_3")
+
+      # print(rekordy)
+      # for rekord in rekordy:
+      #    if rekord.cena_id==3:
+      #       rekord.cena=int(cena_3)
+      #       db.session.commit()
+      #    if rekord.cena_id==2:
+      #       rekord.cena=int(cena_2)
+      #       db.session.commit()
+      #    if rekord.cena_id==1:
+      #       rekord.cena=int(cena_1)
+      #       db.session.commit()
 
 
 
@@ -218,6 +267,8 @@ def dodaj_post():
       napis=""
       for id in zdjecia_ids:
          napis+=str(id)+"~"
+
+
 
       rekord=posty(zdjecia=napis,opis=str(opis))
       db.session.add(rekord)

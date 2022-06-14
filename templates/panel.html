@@ -47,6 +47,13 @@
     </div>
       <div class="col-12 text-center">
           <div class="row">
+            <form method="POST" action="dodaj_usluge">
+              Cena:<input type="number" id="cena" name="cena"> <br>
+              Tytul:<input type="text" id="tytul" name="tytul"> <br>
+              Opis:<input type="text" id="opis" name="opis"> <br>
+              Czy zmienna cena:<input type="checkbox" id="czy_cena_zmienna" name="czy_cena_zmienna" value="TAK"> <br>
+              <input type="submit" class="btn btn-primary" value="Dodaj usługę"/>
+            </form>
             <form method="POST" action="zaktualizuj_ceny">
               {% for usluga in lista %}
               <div class="col-12 my-4">
@@ -61,10 +68,24 @@
                         <div class="col-2">
                       
                           <div class="input-group">
-                              <input class="form-control" type="number" name="cena_{{usluga[0]}}" value="{{usluga[1]}}">
+                              <input class="form-control" type="number" name="cena{{usluga[0]}}" value="{{usluga[1]}}">
                             <span class="input-group-text"> zł </span>
                           </div>
-
+                          <div class="input-group">
+                            <input class="form-control" type="text" name="tytul{{usluga[0]}}" value="{{usluga[2]}}">
+                          </div>
+                          <div class="input-group">
+                            <input class="form-control" type="text" name="opis{{usluga[0]}}" value="{{usluga[3]}}">
+                          </div>
+                          {% if usluga[4]=="TAK" %}
+                          <div class="input-group">
+                            <input type="checkbox" name="czy_cena_zmienna{{usluga[0]}}" value="TAK" checked>
+                          </div>
+                          {% else %}
+                          <div class="input-group">
+                            <input  type="checkbox" name="czy_cena_zmienna{{usluga[0]}}" value="TAK">
+                          </div>
+                          {% endif %}
                             
                         </div>
                         <div class="col-5"></div>
@@ -76,8 +97,9 @@
               </div>
              
               {% endfor %}
+              
               <div class="d-grid gap-2">
-                <input type="submit" class="btn btn-primary" value="Zaktualizuj"/>
+                <input type="submit" class="btn btn-primary" value="Zaktualizuj ceny"/>
               </div>
             </form>
           </div>
