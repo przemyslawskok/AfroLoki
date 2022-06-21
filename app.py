@@ -100,7 +100,7 @@ def glowna():
       napis=rekord.zdjecia
       tablica=napis.split('~')
       for zdjecie in tablica:
-         print(rekord,zdjecie)
+         
 
 
          if str(zdjecie)=="":
@@ -113,7 +113,7 @@ def glowna():
    rekordy=ceny.query.order_by(ceny.cena_id).all()
    lista=[]
    for rekord in rekordy:
-         lista.append([rekord.cena_id,rekord.cena])
+         lista.append([rekord.cena_id,rekord.cena,rekord.tytul,rekord.opis,rekord.czy_cena_zmienna])
       
 
 
@@ -135,7 +135,7 @@ def panel():
          napis=rekord.zdjecia
          tablica=napis.split('~')
          for zdjecie in tablica:
-            print(rekord,zdjecie)
+           
 
 
             if str(zdjecie)=="":
@@ -192,9 +192,9 @@ def zaktualizuj_ceny():
    if uzytkownik_zalogowany():
 
       rekordy=ceny.query.order_by(ceny.cena_id.desc()).all()
-      print(rekordy)
+     
       for n in range(1,len(rekordy)+1):
-         print(n)
+      
          cena=request.form['cena'+str(n)]
          tytul=request.form['tytul'+str(n)]
          opis=request.form['opis'+str(n)]
@@ -300,8 +300,12 @@ def usun_post_post():
    else:
       return redirect ("/dodaj_post")
 
-
-
+@app.route('/usun_usluge_<id>')
+def usun_usluge(id):
+   print(id)
+   ceny.query.filter_by(cena_id=id).delete()
+   db.session.commit()
+   return redirect("/panel")
 
 
 
@@ -330,7 +334,7 @@ def panel_logowanie():
 def zaloguj_sie_postowink():
    login=request.form['login']
    password=request.form['password']
-   print(password,login)
+   
    password=str(password)
    login=str(login)
    if password=="haslo" and login=="loki":
@@ -349,5 +353,9 @@ def zaloguj_sie_postowink():
 if __name__ == '__main__':
     
     app.run('0.0.0.0',port=230,debug=True)
+
+
+
+
 
 

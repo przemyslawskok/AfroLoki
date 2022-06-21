@@ -252,16 +252,103 @@
 
 
         <!-- Cennik -->
-        <div class="container" id="cennik" style="">
+        <div class="my-5" id="cennik" style="">
             <div class="row">
                 <div class="col-12 text-center">
                     <h1>Poznaj nasze usługi</h1>
 
                 </div>
                 <div class="col-12">
-            {% for usluga in lista %}
-                {{usluga}}
-            {% endfor %}
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-sm-8 col-12 p-4">
+
+
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <th scope="col text-center" style="width:20%">
+                                        Nazwa usługi
+                                    </th>
+                                    <th scope="col" style="width:60%">
+                                        Opis
+                                       
+                                    </th>
+                                    <th scope="col text-center" style="width:20%">
+                                        Cena
+                                    </th>
+                                </thead>
+                                
+                                {% for usluga in lista %}
+        
+                                {% if loop.index % 2 == 0 %}
+                                    <tr scope="row" style="background-color:#edffff">
+                                        <td >
+                                            {{usluga[2]}}
+                                        </td>
+                                        <td>
+                                            {{usluga[3]}}
+                                        </td>
+                                        {% if usluga[4] == "TAK" %}
+                                        <td >
+                                            {{usluga[1]}}*
+                                        </td>
+                                        {% else %}
+                                        <td>
+                                            {{usluga[1]}}
+                                        </td>
+                                        {% endif %}
+                                    </tr>
+                                {% else %}
+        
+                                    <tr scope="row" style="background-color:#defafa">
+                                        <td >
+                                            {{usluga[2]}}
+                                        </td>
+                                        <td>
+                                            {{usluga[3]}}
+                                        </td>
+                                        {% if usluga[4] == "TAK" %}
+                                        <td>
+                                            {{usluga[1]}}*
+                                        </td>
+                                        {% else %}
+                                        <td >
+                                            {{usluga[1]}}
+                                        </td>
+                                        {% endif %}
+                                    </tr>
+                                {% endif %}
+                                    
+                                {% endfor %}
+                                <tfoot>
+                                    <tr>
+                                        <td >
+                                            
+                                        <td class="text-center">
+                                            <small> * - Cena uzależniona od długości włosów </small>
+        
+                                        </td>
+                                        <td >
+                                        </td>
+                                    </tr>
+                                    
+                                </tfoot>
+                            </table>
+        
+        
+
+
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 " style="width:60%">
+                    
+                   
+                    
+
                 </div>
             </div>
         </div>

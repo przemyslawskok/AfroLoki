@@ -7,7 +7,7 @@
   <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 
   
@@ -36,8 +36,6 @@
 
 
 
-
-
 <hr class="my-5">
 
 <div class="container">
@@ -45,69 +43,132 @@
     <div class="col-12 text-center">
       <p class="display-2">Edytuj cennik</p>
     </div>
-      <div class="col-12 text-center">
+    
+      <div class="col-12">
+        
           <div class="row">
+            
+            
+            <div class="col-3"></div>
+            <div class="col-sm-6 col-12">
             <form method="POST" action="dodaj_usluge">
-              Cena:<input type="number" id="cena" name="cena"> <br>
-              Tytul:<input type="text" id="tytul" name="tytul"> <br>
-              Opis:<input type="text" id="opis" name="opis"> <br>
-              Czy zmienna cena:<input type="checkbox" id="czy_cena_zmienna" name="czy_cena_zmienna" value="TAK"> <br>
-              <input type="submit" class="btn btn-primary" value="Dodaj usługę"/>
+              <div class="form-group row my-2">
+                <label for="tytul" class="col-2 col-form-label">Tytuł</label> 
+                <div class="col-10">
+                  <input id="tytul" name="tytul" type="text" required="required" class="form-control">
+                </div>
+              </div>
+              <div class="form-group row my-2">
+                <label for="opis" class="col-2 col-form-label">Opis</label> 
+                <div class="col-10">
+                  <textarea id="opis" name="opis" cols="40" rows="3" required="required" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="form-group row my-2">
+                <label for="cena" class="col-2 col-form-label">Cena</label> 
+                <div class="col-10">
+                  <input id="cena" name="cena" type="text" aria-describedby="cenaHelpBlock" required="required" class="form-control"> 
+                  <span id="cenaHelpBlock" class="form-text text-muted">Dla najlepszej czytelności wpisz cenę w formacie np. "20 zł" bądź "20 zł - 60 zł"</span>
+                </div>
+              </div>
+              <div class="form-group row my-2">
+                <label class="col-3">Czy zmienna cena?</label> 
+                <div class="col-9">
+                  <div class="custom-control custom-checkbox custom-control-inline">
+                    <input name="czy_cena_zmienna" id="czy_cena_zmienna_0" type="checkbox" aria-describedby="czy_cena_zmiennaHelpBlock" class="custom-control-input" value="TAK"> 
+                    <span id="czy_cena_zmiennaHelpBlock" class="form-text text-muted">Zaznaczenie tej opcji spowoduje dodanie gwiazdki przy cenie, która oznacza, że cena jest uzalezniona od długości włosów.</span>
+
+                  </div> 
+                </div>
+              </div> 
+              <div class="form-group row my-4">
+                <div class="col-10">
+                  <button name="submit" type="submit" class="btn btn-primary">Dodaj usługę</button>
+                </div>
+              </div>
             </form>
+          </div>
+            <div class="col-3"></div>
+
+          
             <form method="POST" action="zaktualizuj_ceny">
               {% for usluga in lista %}
               <div class="col-12 my-4">
                 <div class="card">
                   <div class="card-body">
-                    <div class="card-title">
-                      Usługa nr. <b>{{usluga[0]}}</b>
+                    <div class="card-title text-center">
+                     
                     </div>
                     <div class="card-text">
                       <div class="row text-center">
-                        <div class="col-5 "></div>
-                        <div class="col-2">
-                      
-                          <div class="input-group">
-                              <input class="form-control" type="number" name="cena{{usluga[0]}}" value="{{usluga[1]}}">
-                            <span class="input-group-text"> zł </span>
-                          </div>
-                          <div class="input-group">
-                            <input class="form-control" type="text" name="tytul{{usluga[0]}}" value="{{usluga[2]}}">
-                          </div>
-                          <div class="input-group">
-                            <input class="form-control" type="text" name="opis{{usluga[0]}}" value="{{usluga[3]}}">
-                          </div>
-                          {% if usluga[4]=="TAK" %}
-                          <div class="input-group">
-                            <input type="checkbox" name="czy_cena_zmienna{{usluga[0]}}" value="TAK" checked>
-                          </div>
-                          {% else %}
-                          <div class="input-group">
-                            <input  type="checkbox" name="czy_cena_zmienna{{usluga[0]}}" value="TAK">
-                          </div>
-                          {% endif %}
-                            
-                        </div>
-                        <div class="col-5"></div>
-                      </div>
-                    
+                        
+                          <div class="col-3"></div>
+                          <div class="col-sm-6 col-12">
+
+
+                            <div class="form-group row my-2">
+                              <label for="tytul" class="col-sm-2 col-3 col-form-label">Tytuł</label> 
+                              <div class="col-sm-10 col-9">
+                                <input class="form-control" type="text" name="tytul{{usluga[0]}}" value="{{usluga[2]}}">
+                                
+                              </div>
+                            </div>
+                            <div class="form-group row my-2">
+                              <label for="opis" class="col-sm-2 col-3 col-form-label">Opis</label> 
+                              <div class="col-sm-10 col-9">
+                                <textarea name="opis{{usluga[0]}}" cols="40" rows="3" required="required" class="form-control">{{usluga[3]}}</textarea>
+                              </div>
+                            </div>
+                            <div class="form-group row my-2">
+                              <label for="cena" class="col-sm-2 col-3 col-form-label">Cena</label> 
+                              <div class="col-sm-10 col-9">
+                                <input name="cena{{usluga[0]}}" id="cena{{usluga[0]}}" value="{{usluga[1]}}" type="text" aria-describedby="cena{{usluga[0]}}_"required="required" class="form-control"> 
+                                <span id="cena{{usluga[0]}}_" class="form-text text-muted">Dla najlepszej czytelności wpisz cenę w formacie np. "20 zł" bądź "20 zł - 60 zł"</span>
+                              </div>
+                            </div>
+                            <div class="form-group row my-2">
+                              <label class="col-3">Czy zmienna cena?</label> 
+                              <div class="col-9">
+                                <div class="custom-control custom-checkbox custom-control-inline">
+
+
+                                  {% if usluga[4]=="TAK" %}
+                                  <input name="czy_cena_zmienna{{usluga[0]}}" id="czy_cena_zmienna{{usluga[0]}}" type="checkbox" aria-describedby="czy_cena_zmienna{{usluga[0]}}_" class="custom-control-input" value="TAK" checked> 
+                                  <span id="czy_cena_zmienna{{usluga[0]}}_" class="form-text text-muted">Zaznaczenie tej opcji spowoduje dodanie gwiazdki przy cenie, która oznacza, że cena jest uzalezniona od długości włosów.</span>
+              
+                                {% else %}
+                                <input name="czy_cena_zmienna{{usluga[0]}}" id="czy_cena_zmienna{{usluga[0]}}" type="checkbox" aria-describedby="czy_cena_zmienna{{usluga[0]}}_" class="custom-control-input" value="TAK"> 
+                                <span id="czy_cena_zmienna{{usluga[0]}}_" class="form-text text-muted">Zaznaczenie tej opcji spowoduje dodanie gwiazdki przy cenie, która oznacza, że cena jest uzalezniona od długości włosów.</span>
+            
+                                {% endif %}
+                                 
+                                </div> 
+                              </div>
+                            </div> 
+                            <div class="text-center my-5">
+
+                              <a href="/usun_usluge_{{usluga[0]}}" style="color:black;" onclick="return confirm('Na pewno chcesz usunąć usługę {{usluga[2]}}?');"><i class="fa-solid fa-3x fa-trash"></i></a>
+                            </div>
+
+
+                   
                     </div>
+                    <div class="col-3"></div>
+                  </div>
                   </div>
                 </div>
               </div>
              
               {% endfor %}
               
-              <div class="d-grid gap-2">
-                <input type="submit" class="btn btn-primary" value="Zaktualizuj ceny"/>
+              <div class="d-grid gap-2 my-5">
+                <input type="submit" class="btn btn-primary" value="Zaktualizuj usługi"/>
               </div>
             </form>
           </div>
       </div>
     </div>
 </div>
-
-
 
 
 
