@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import timedelta
 import os
 import shutil
-
+import dane
 
 
 
@@ -278,7 +278,7 @@ def dodaj_post():
       return redirect("/panel")
       
    else:
-      return redirect("/panel_logowanie")
+      return redirect("/login")
 
 @app.route('/usun_post',methods=["POST"])
 def usun_post_post():
@@ -316,8 +316,8 @@ def usun_usluge(id):
 
 
 
-@app.route('/panel_logowanie')
-def panel_logowanie():
+@app.route('/login')
+def login():
    if uzytkownik_zalogowany():
       return redirect("/panel")
    else:
@@ -337,12 +337,12 @@ def zaloguj_sie_postowink():
    
    password=str(password)
    login=str(login)
-   if password=="haslo" and login=="loki":
+   if login==dane.ADMIN_LOGIN and password==dane.ADMIN_PASSWORD:
       session['sjnsda8i3j2k4a,mSDAlk*@nb2']="87ashknm2afm,cxvnxc"
       return redirect("/panel")
    else:
       logowanie.bledne=True
-      return redirect('/panel_logowanie')
+      return redirect('/login')
    
 
 

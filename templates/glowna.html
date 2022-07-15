@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <style>
-            
+        
             section {
                
                 min-height: 100vh;
@@ -166,6 +166,43 @@
         width:100%;
         position:absolute;
         }
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+        .text-glowna {
+           
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5vh;
+        }
+        .text-naglowek{
+            color:#01e0d5;
+            font-size: 3vh;
+        }
+        .text-hr{
+            border: 0;
+            height: 0;
+            border-top: 3px solid #01e0d5;
+            border-bottom: 2px solid #017a74;
+            width:50%;
+            margin:auto;
+            }
+        .text-navbar-name{
+            font-family: 'Send Flowers', cursive;
+            color:#01e0d5;
+            font-size: 10vh !important; 
+        }
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+        .text-table{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2vh;
+        }
+        .text-table-head{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3vh;
+        }
+      
         </style>
 
     </head>
@@ -190,11 +227,11 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">AfroLoki</h1>
+                        <p class="text-navbar-name">AfroLoki</p>
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Twoje loczki będą koks w naszych rękach!</p>
+                        <p class="text-white-75 mb-5">Zakręć się z nami!</p>
                         <a class="btn btn-primary btn-xl" href="#onas">Dowiedz się więcej</a>
                     </div>
                 </div>
@@ -207,13 +244,29 @@
         <div class="container" id="onas">
             <!-- O mnie -->
             <div class="row m-5">
-                <div class="col-sm-6 col-12">
+                <div class="col-sm-6 mt-5 col-12 text-center p-5">
                     <img class="img-fluid" src="{{url_for('static', filename='zdjecie_1.png')}}"></img>
                 </div>
-                <div class="col-sm-6 col-12 text-center">
+                <div class="col-sm-6 my-5 col-12 text-glowna text-center" >
                     
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed sodales nulla. Cras sagittis ipsum vel est cursus, in interdum dui porta. Proin hendrerit rutrum pulvinar. Etiam ultrices faucibus orci, id scelerisque velit dictum eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi pellentesque ante ante, eu fermentum magna lobortis sit amet. Etiam id lacus felis. Ut consequat ligula nulla, vel vulputate libero vulputate eu
-
+                   <p style="font-size:2.5vh;"> <span class="text-naglowek">Afro loki</span> to syntetyczne włosy, które wyglądają jak naturalne.</p>
+                    
+                   <p style="font-size:2vh;">
+                    Gwarantują piękną i niespodziewaną metamorfozę, obok której nikt nie przejdzie obojętnie.
+                    Nie da się ukryć, afro loki dają efekt spektakularny, szczególnie gdy  jest ich bardzo dużo i są one gęste i długie. 
+                    To fryzura, którą można nosić około 10 tygodni. 
+                    Po zdjęciu afro loków możemy wrócić do naszych naturalnych włosów lub też założyć zupełnie nowe afro loki, które dostępne są w wielu różnych kolorach i długościach.
+                    Możesz mieć loczki gęste i drobne jak sprężynki, loki o mniejszym skręcie, a nawet fale.
+                    Krótkie, długie, związane, rozpuszczone – afro loki to fryzura pełna objętości i szaleństwa. 
+                    </p>
+                    <hr class="text-hr my-4">
+                    
+                    <p style="font-size:2.5vh;"> <span class="text-naglowek">Afro loki</span> to włosy syntetyczne doczepiane do włosów naturalnych.</p>
+                    <p style="font-size:2vh;">
+                    Pasemka afro loków aplikowane są metodą wplatania we włosy naturalne w taki sposób, by te mogły oddychać i rosnąć.
+                    Niezwykle istotne jest to, że przy zakładaniu afro loków nie używamy wysokich temperatur, żadnej keratyny, ringów, klejów, ani żadnych innych preparatów chemicznych mogących mieć negatywny wpływ na włosy naturalne.
+                    Przeciwwskazaniem do aplikacji afroloków są choroby skóry głowy; łupież, grzybica, czy nadmierne wypadanie włosów.
+                    </p>
                 </div>
             </div>
         </div>
@@ -225,22 +278,70 @@
 
 
        
-        <div class="parallax" style="height:10vh;"></div>
+        <div class="parallax2" style="height:10vh;"></div>
 
 
 
 
         <!-- O firmie -->
         <div class="container" >
-            <div class="row m-5">
+            <div class="row">
                 
-                <div class="col-sm-6 col-12 text-center">
+                <div class="col-sm-6 my-5 col-12 text-center text-glowna">
+                    <p style="font-size:2.5vh;">
+                    <span class="text-naglowek">Keratyna</span> jest podstawowym budulcem skóry, paznokci i włosów. 
+                    </p>
+                    <p style="font-size:2vh;">
+                    Włókna połączone są ze sobą poprzecznymi wiązaniami sierczkowymi, dzięki czemu włosy są bardziej elastyczne i sprężyste. 
+                    Keratyna wchodzi również w skład zewnętrznej osłonki włosa, gdzie jest odpowiedzialna za połysk i blask włosów. 
+                    Jej brak doprowadza m.in. do otwierania się łusek włosa i rozdwajania końcówek. 
+                    </p>
+                    
+                    
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed sodales nulla. Cras sagittis ipsum vel est cursus, in interdum dui porta. Proin hendrerit rutrum pulvinar. Etiam ultrices faucibus orci, id scelerisque velit dictum eget. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi pellentesque ante ante, eu fermentum magna lobortis sit amet. Etiam id lacus felis. Ut consequat ligula nulla, vel vulputate libero vulputate eu
+                    
+                   
                 </div>
 
-                <div class="col-sm-6 col-12">
+               
+
+                <div class="col-sm-6 my-5 col-12">
+                    
                     <img class="img-fluid" src="{{url_for('static', filename='zdjecie_2.png')}}"></img>
+                </div>
+                
+                <div class="col-sm-6 my-5 col-12">
+                    
+                    <img class="img-fluid" src="{{url_for('static', filename='certyfikat.png')}}"></img>
+                </div>
+                <div class="col-sm-6 my-5 col-12 text-center text-glowna">
+                    <p style="font-size:2.5vh;">
+                        <span class="text-naglowek">Keratyna</span> chroni włosy przed szkodliwym działaniem środków utleniających, farb i środków do trwałych ondulacji.
+                    </p>
+                    <p style="font-size:2vh;">
+                    Chroni również włosy przed wysuszającym działaniem innych środków myjących zawartych w szamponach. 
+                    Zapobiega negatywnemu wpływowi promieni UV i wiatru.
+                    </p>
+                    
+                    <hr class="text-hr my-4">
+
+                    <p style="font-size:2.5vh;">
+                    <span class="text-naglowek">Amazon keratin </span> 
+                    to zabieg keratynowy, którego celem jest odbudowa struktury włosów, ich intensywne odżywianie i wygładzenie. 
+                    
+                    <p style="font-size:2vh;">
+                    Preparaty keratynowe używane podczas zabiegu, zawierają nie tylko kreatynę, która regeneruje uszkodzone włosy, lecz także antyoksydanty, wyciągi z roślin i witaminy, które trwale nawilżają włosy i dostarczają niezbędnych składników odżywczych oraz kwasy tłuszczowe, które tworzą na włosach niewidoczna barierę ochronną przed szkodliwymi czynnikami zewnętrznymi.
+                    </p>
+                    
+                    <hr class="text-hr my-4">
+                    
+                    <p style="font-size:2.5vh;">
+                    <span class="text-naglowek">Zabieg keratynowy </span> 
+                    został opracowany w Brazylii z myślą o kobietach, które cieszą się gęstymi, lecz puszacymi, kręconymi i zniszczonymi słońcem włosami. 
+                    </p>
+                    <p style="font-size:2vh;">
+                    Zabieg keratynowy miał przede wszystkim pomóc w codziennej pielęgnacji włosów, w wyprostowaniu niesfornych loków oraz chronić włosy przed wilgocią i działaniem słońca.
+                    </p>
                 </div>
             </div>
         </div>
@@ -252,8 +353,8 @@
 
 
         <!-- Cennik -->
-        <div class="my-5" id="cennik" style="">
-            <div class="row">
+        <div class="my-5" id="cennik">
+            <div class="row m-0">
                 <div class="col-12 text-center">
                     <h1>Poznaj nasze usługi</h1>
 
@@ -264,32 +365,32 @@
                         <div class="col-sm-8 col-12 p-4">
 
 
-                            <table class="table table-hover table-responsive">
-                                <thead>
-                                    <th scope="col text-center" style="width:20%">
+                            <table class="table table-hover table-responsive text-table" >
+                                <thead class="text-table-head">
+                                    <th class="p-4"  scope="col text-center" style="width:20%">
                                         Nazwa usługi
                                     </th>
-                                    <th scope="col" style="width:60%">
+                                    <th class="p-4"  scope="col" style="width:60%">
                                         Opis
                                        
                                     </th>
-                                    <th scope="col text-center" style="width:20%">
+                                    <th class="p-4"  scope="col text-center" style="width:20%">
                                         Cena
                                     </th>
                                 </thead>
-                                
+                                <tbody class="text-table">
                                 {% for usluga in lista %}
         
                                 {% if loop.index % 2 == 0 %}
-                                    <tr scope="row" style="background-color:#edffff">
-                                        <td >
+                                    <tr scope="row"  style="background-color:#edffff">
+                                        <td class="p-4" >
                                             {{usluga[2]}}
                                         </td>
-                                        <td>
+                                        <td class="p-4" >
                                             {{usluga[3]}}
                                         </td>
                                         {% if usluga[4] == "TAK" %}
-                                        <td >
+                                        <td class="p-4" >
                                             {{usluga[1]}}*
                                         </td>
                                         {% else %}
@@ -301,18 +402,18 @@
                                 {% else %}
         
                                     <tr scope="row" style="background-color:#defafa">
-                                        <td >
+                                        <td class="p-4" >
                                             {{usluga[2]}}
                                         </td>
-                                        <td>
+                                        <td class="p-4" >
                                             {{usluga[3]}}
                                         </td>
                                         {% if usluga[4] == "TAK" %}
-                                        <td>
+                                        <td class="p-4" >
                                             {{usluga[1]}}*
                                         </td>
                                         {% else %}
-                                        <td >
+                                        <td class="p-4" >
                                             {{usluga[1]}}
                                         </td>
                                         {% endif %}
@@ -320,6 +421,7 @@
                                 {% endif %}
                                     
                                 {% endfor %}
+                                </tbody>
                                 <tfoot>
                                     <tr>
                                         <td >
@@ -354,13 +456,13 @@
         </div>
 
 
-        <div class="parallax2 mb-5" style="height:10vh;"></div>
+        <div class="parallax mb-5" style="height:10vh;"></div>
          <!-- Kontakt -->
         <div class="container  mt-5" id="kontakt" style="height:90vh;">
 
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12 mb-5 text-center">
                         <h1>Jak do nas dotrzeć?</h1>
 
                     </div>
