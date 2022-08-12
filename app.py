@@ -296,9 +296,9 @@ def usun_post_post():
 
 
 
-      return redirect ("/dodaj_post")
+      return redirect ("/panel")
    else:
-      return redirect ("/dodaj_post")
+      return redirect ("/panel")
 
 @app.route('/usun_usluge_<id>')
 def usun_usluge(id):

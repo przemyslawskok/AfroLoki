@@ -19,6 +19,8 @@
         <link href="{{url_for('static', filename='css/css.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="{{url_for('static', filename='css/background.css')}}" rel="stylesheet">
+
         <style>
         
             section {
@@ -189,24 +191,24 @@
             margin:auto;
             }
         .text-navbar-name{
-            font-family: 'Send Flowers', cursive;
+            font-family: 'Brush Script MT', cursive;
             color:#01e0d5;
             font-size: 10vh !important; 
         }
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+      
         .text-table{
-            font-family: 'JetBrains Mono', monospace;
+            font-family:"Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-size: 2vh;
         }
         .text-table-head{
-            font-family: 'JetBrains Mono', monospace;
+            font-family:"Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-size: 3vh;
         }
       
         </style>
 
     </head>
-    <body id="strona_glowna" >
+    <body id="strona_glowna"  class="background">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
@@ -240,14 +242,14 @@
         
 
   
-        
+    <div> 
         <div class="container" id="onas">
             <!-- O mnie -->
             <div class="row m-5">
-                <div class="col-sm-6 mt-5 col-12 text-center p-5">
+                <div class="col-sm-6 mt-2 col-12 text-center p-5">
                     <img class="img-fluid" src="{{url_for('static', filename='zdjecie_1.png')}}"></img>
                 </div>
-                <div class="col-sm-6 my-5 col-12 text-glowna text-center" >
+                <div class="col-sm-6 mt-2 col-12 text-glowna text-center" >
                     
                    <p style="font-size:2.5vh;"> <span class="text-naglowek">Afro loki</span> to syntetyczne włosy, które wyglądają jak naturalne.</p>
                     
@@ -305,8 +307,7 @@
 
                
 
-                <div class="col-sm-6 my-5 col-12">
-                    
+                <div class="col-sm-6 mt-5 col-12">
                     <img class="img-fluid" src="{{url_for('static', filename='zdjecie_2.png')}}"></img>
                 </div>
                 
@@ -349,8 +350,7 @@
 
 
 
-        <div class="parallax" style="height:10vh;"></div>
-
+        
 
         <!-- Cennik -->
         <div class="my-5" id="cennik">
@@ -362,10 +362,10 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-2"></div>
-                        <div class="col-sm-8 col-12 p-4">
+                        <div class="col-sm-8 col-12 p-4 table-responsive">
 
 
-                            <table class="table table-hover table-responsive text-table" >
+                            <table class="table table-hover text-table" >
                                 <thead class="text-table-head">
                                     <th class="p-4"  scope="col text-center" style="width:20%">
                                         Nazwa usługi
@@ -446,12 +446,7 @@
                 </div>
 
 
-                <div class="col-12 " style="width:60%">
-                    
-                   
-                    
-
-                </div>
+      
             </div>
         </div>
 
@@ -496,7 +491,7 @@
                                         <i style="color:#01e0d5;" class="fa-solid fa-2x fa-envelope my-3" ></i>
                                     </div>
                                     <div class="col-12">
-                                        <a href="mailto:afroloki@afrolki.pl">afroloki@afrolki.pl</a>
+                                        <a href="mailto:afroloki@afrolki.pl">izabela1232@wp.pl</a>
                                     </div>
                                 </div>
 
@@ -511,9 +506,9 @@
                                     </div>
                                     
                                     <div class="col-12">Poniedziałek - Piątek</div>
-                                    <div class="col-12">10:00-17:00</div>
+                                    <div class="col-12">8:00-17:00</div>
                                     <div class="col-12">Sobota</div>
-                                    <div class="col-12">12:00-14:00</div>
+                                    <div class="col-12">9:00-14:00</div>
                                 
                                 </div>
 
@@ -650,9 +645,11 @@
         </div>
         
      
-        <footer class="bg-light py-5">
+        <footer class="py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - AfroLoki</div></div>
         </footer>
+
+    </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
