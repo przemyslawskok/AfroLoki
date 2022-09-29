@@ -192,27 +192,30 @@ def zaktualizuj_ceny():
    if uzytkownik_zalogowany():
 
       rekordy=ceny.query.order_by(ceny.cena_id.desc()).all()
-     
-      for n in range(1,len(rekordy)+1):
-      
-         cena=request.form['cena'+str(n)]
-         tytul=request.form['tytul'+str(n)]
-         opis=request.form['opis'+str(n)]
-         czy_cena_zmienna=request.form.getlist('czy_cena_zmienna'+str(n))
-         if czy_cena_zmienna==[]:
-            czy_cena_zmienna="NIE"
-         else:
-            czy_cena_zmienna=czy_cena_zmienna[0]
-         for rekord in rekordy:
-            if rekord.cena_id==n:
-               rekord.cena=cena
-               rekord.tytul=tytul
-               rekord.opis=opis
-               rekord.czy_cena_zmienna=czy_cena_zmienna
-               
-               db.session.commit()
-
-
+      try:
+         for n in range(1,int(rekordy[0].cena_id)+2):
+            print(n)
+            try:
+               cena=request.form['cena'+str(n)]
+               tytul=request.form['tytul'+str(n)]
+               opis=request.form['opis'+str(n)]
+               czy_cena_zmienna=request.form.getlist('czy_cena_zmienna'+str(n))
+               if czy_cena_zmienna==[]:
+                  czy_cena_zmienna="NIE"
+               else:
+                  czy_cena_zmienna=czy_cena_zmienna[0]
+               for rekord in rekordy:
+                  if rekord.cena_id==n:
+                     rekord.cena=cena
+                     rekord.tytul=tytul
+                     rekord.opis=opis
+                     rekord.czy_cena_zmienna=czy_cena_zmienna
+                     
+                     db.session.commit()
+            except:
+               print("Nie znaleziono rekordu o id "+str(n))
+      except:
+         print("Nie ma rekordów")
 
       # cena_1=request.form.get("cena_1")
       # cena_2=request.form.get("cena_2")

@@ -245,11 +245,16 @@
     <div> 
         <div class="container" id="onas">
             <!-- O mnie -->
-            <div class="row m-5">
-                <div class="col-sm-6 mt-2 col-12 text-center p-5">
+            <div class="row">
+                <!-- mobile -->
+                <div class="col-sm-6 mt-3 mb-2 col-12 text-center d-block d-sm-block d-md-block d-lg-none ">
                     <img class="img-fluid" src="{{url_for('static', filename='zdjecie_1.png')}}"></img>
                 </div>
-                <div class="col-sm-6 mt-2 col-12 text-glowna text-center" >
+                <!-- large -->
+                <div class="col-sm-6 mt-5 col-12 p-5 text-center d-none d-lg-block">
+                    <img class="img-fluid" src="{{url_for('static', filename='zdjecie_1.png')}}"></img>
+                </div>
+                <div class="col-sm-6 mt-5 col-12 text-glowna text-center" >
                     
                    <p style="font-size:2.5vh;"> <span class="text-naglowek">Afro loki</span> to syntetyczne włosy, które wyglądają jak naturalne.</p>
                     
@@ -261,10 +266,17 @@
                     Możesz mieć loczki gęste i drobne jak sprężynki, loki o mniejszym skręcie, a nawet fale.
                     Krótkie, długie, związane, rozpuszczone – afro loki to fryzura pełna objętości i szaleństwa. 
                     </p>
-                    <hr class="text-hr my-4">
+                    <!-- visible on large view -->
+                    <hr class="text-hr my-4 d-none d-lg-block">
                     
+                     <!-- visible on small  view -->
+                    <div class="col-sm-6 my-5 col-12 d-block d-sm-block d-md-block d-lg-none " >
+                        <img class="img-fluid" src="{{url_for('static', filename='certyfikat.png')}}"></img>
+                    </div>
+
+
                     <p style="font-size:2.5vh;"> <span class="text-naglowek">Afro loki</span> to włosy syntetyczne doczepiane do włosów naturalnych.</p>
-                    <p style="font-size:2vh;">
+                    <p style="font-size:2vh;" class="mb-5">
                     Pasemka afro loków aplikowane są metodą wplatania we włosy naturalne w taki sposób, by te mogły oddychać i rosnąć.
                     Niezwykle istotne jest to, że przy zakładaniu afro loków nie używamy wysokich temperatur, żadnej keratyny, ringów, klejów, ani żadnych innych preparatów chemicznych mogących mieć negatywny wpływ na włosy naturalne.
                     Przeciwwskazaniem do aplikacji afroloków są choroby skóry głowy; łupież, grzybica, czy nadmierne wypadanie włosów.
@@ -306,13 +318,18 @@
                 </div>
 
                
-
-                <div class="col-sm-6 mt-5 col-12">
+                <!-- visible on lg view -->
+                <div class="col-sm-6 mt-5 col-12 d-none d-lg-block">
                     <img class="img-fluid" src="{{url_for('static', filename='zdjecie_2.png')}}"></img>
                 </div>
-                
-                <div class="col-sm-6 my-5 col-12">
-                    
+                <!-- visible on sm view -->
+                <div class="col-sm-6 col-12 d-block d-sm-block d-md-block d-lg-none">
+                    <img class="img-fluid" src="{{url_for('static', filename='zdjecie_2.png')}}"></img>
+                </div>
+
+
+                <!-- visible on lg view -->
+                <div class="col-sm-6 my-5 col-12 d-none d-lg-block">
                     <img class="img-fluid" src="{{url_for('static', filename='certyfikat.png')}}"></img>
                 </div>
                 <div class="col-sm-6 my-5 col-12 text-center text-glowna">
@@ -379,59 +396,56 @@
                                     </th>
                                 </thead>
                                 <tbody class="text-table">
-                                {% for usluga in lista %}
+                                    {% for usluga in lista %}
         
-                                {% if loop.index % 2 == 0 %}
-                                    <tr scope="row"  style="background-color:#edffff">
-                                        <td class="p-4" >
-                                            {{usluga[2]}}
-                                        </td>
-                                        <td class="p-4" >
-                                            {{usluga[3]}}
-                                        </td>
-                                        {% if usluga[4] == "TAK" %}
-                                        <td class="p-4" >
-                                            {{usluga[1]}}*
-                                        </td>
-                                        {% else %}
-                                        <td>
-                                            {{usluga[1]}}
-                                        </td>
-                                        {% endif %}
-                                    </tr>
-                                {% else %}
-        
-                                    <tr scope="row" style="background-color:#defafa">
-                                        <td class="p-4" >
-                                            {{usluga[2]}}
-                                        </td>
-                                        <td class="p-4" >
-                                            {{usluga[3]}}
-                                        </td>
-                                        {% if usluga[4] == "TAK" %}
-                                        <td class="p-4" >
-                                            {{usluga[1]}}*
-                                        </td>
-                                        {% else %}
-                                        <td class="p-4" >
-                                            {{usluga[1]}}
-                                        </td>
-                                        {% endif %}
-                                    </tr>
-                                {% endif %}
-                                    
-                                {% endfor %}
+                                    {% if loop.index % 2 == 0 %}
+                                        <tr scope="row"  style="background-color:#edffff">
+                                            <td class="p-4" >
+                                                {{usluga[2]}}
+                                            </td>
+                                            <td class="p-4" >
+                                                {{usluga[3]}}
+                                            </td>
+                                            {% if usluga[4] == "TAK" %}
+                                            <td class="p-4" >
+                                                {{usluga[1]}}*
+                                            </td>
+                                            {% else %}
+                                            <td class="p-4">
+                                                {{usluga[1]}}
+                                            </td>
+                                            {% endif %}
+                                        </tr>
+                                    {% else %}
+            
+                                        <tr scope="row" style="background-color:#defafa">
+                                            <td class="p-4" >
+                                                {{usluga[2]}}
+                                            </td>
+                                            <td class="p-4" >
+                                                {{usluga[3]}}
+                                            </td>
+                                            {% if usluga[4] == "TAK" %}
+                                            <td class="p-4" >
+                                                {{usluga[1]}}*
+                                            </td>
+                                            {% else %}
+                                            <td class="p-4" >
+                                                {{usluga[1]}}
+                                            </td>
+                                            {% endif %}
+                                        </tr>
+                                    {% endif %}
+                                        
+                                    {% endfor %}
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td >
-                                            
-                                        <td class="text-center">
-                                            <small> * - Cena uzależniona od długości włosów </small>
-        
+                                        
+                                        <td colspan="3" class="text-center">
+                                            <small> * - Cena uzależniona od <b>gęstości</b> oraz <b>długości</b> włosów </small>
                                         </td>
-                                        <td >
-                                        </td>
+                                       
                                     </tr>
                                     
                                 </tfoot>
@@ -450,12 +464,10 @@
             </div>
         </div>
 
-
-        <div class="parallax mb-5" style="height:10vh;"></div>
          <!-- Kontakt -->
-        <div class="container  mt-5" id="kontakt" style="height:90vh;">
+        <div class="container" id="kontakt" style="height:90vh;">
 
-            <div class="container">
+            <div class="container text-glowna" style="font-size:2vh;">
                 <div class="row">
                     <div class="col-12 mb-5 text-center">
                         <h1>Jak do nas dotrzeć?</h1>
@@ -475,7 +487,7 @@
                                         <i style="color:#01e0d5;" class="fa-solid fa-2x fa-location-dot my-3 fa-bounce" style="--fa-animation-delay:4s; --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1; --fa-bounce-rebound: 0;" ></i>
                                     </div>
                                     <div class="col-12">
-                                        Wiejska 12, Wasilków
+                                        Rynek Kilińskiego 21, Wasilków
                                     </div>
                                 </div>
 
@@ -491,7 +503,7 @@
                                         <i style="color:#01e0d5;" class="fa-solid fa-2x fa-envelope my-3" ></i>
                                     </div>
                                     <div class="col-12">
-                                        <a href="mailto:afroloki@afrolki.pl">izabela1232@wp.pl</a>
+                                        <a href="mailto:izabela1232@wp.pl">izabela1232@wp.pl</a>
                                     </div>
                                 </div>
 
@@ -522,7 +534,7 @@
                                         <i style="color:#01e0d5;" class="fa-solid fa-2x fa-phone fa-shake my-3" style="--fa-animation-delay:2s;"></i>
                                     </div>
                                     <div class="col-12">
-                                        <a href="tel:+48533962159"> +48533962159 </a>
+                                        <a href="tel:+48533962159"> +48 533 962 159 </a>
                                     </div>
                                 </div>
                                
@@ -538,7 +550,7 @@
                     <div class="col-12">
                         <div>
                             
-                            <iframe class="pt-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d307.51675041143983!2d23.15352949901518!3d53.19814994986531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffd763de145c5%3A0x2947fb310338f4a0!2sWiejska%2012%2C%2016-010!5e0!3m2!1sen!2spl!4v1653843280561!5m2!1sen!2spl" style="height:40vh;width:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe class="pt-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d298.74866018732075!2d23.208226760225582!3d53.20011197514636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffdf652e304ff%3A0x9b35cabd589f536a!2srynek%20Kili%C5%84skiego%2021%2C%2016-010%20Wasilk%C3%B3w!5e0!3m2!1sen!2spl!4v1664445302069!5m2!1sen!2spl" style="height:40vh;width:100%;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             
                         </div>
                     </div>
@@ -646,7 +658,16 @@
         
      
         <footer class="py-5">
-            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - AfroLoki</div></div>
+            
+                
+                <div class="col-12 text-center mb-3" style="color:#01e0d5;">
+                    <a href="https://www.facebook.com/afrolokiwasilkow"><i class="fa-brands fa-facebook fa-3x" style="margin-right:20px;"></i></a>
+                    <a href="https://www.instagram.com/afro_loki_bialystok/"><i class="fa-brands fa-instagram fa-3x" style="margin-left:20px;"></i></a>
+                </div>
+                <div class="col-12">
+                    <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - AfroLoki</div></div>
+                </div>
+            </div>
         </footer>
 
     </div>
